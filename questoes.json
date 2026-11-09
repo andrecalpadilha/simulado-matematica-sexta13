@@ -1,0 +1,194 @@
+[
+  {
+    "id": 1,
+    "tema": "Porcentagens sucessivas",
+    "enunciado": "Um notebook custa R$ 2.500,00. Durante uma promoção, recebeu um desconto de 20%. Sobre o novo preço, foi aplicado mais um desconto de 10%. Qual foi o preço final do notebook?",
+    "alternativas": [
+      {"letra": "A", "texto": "R$ 1.750,00"},
+      {"letra": "B", "texto": "R$ 1.800,00"},
+      {"letra": "C", "texto": "R$ 1.850,00"},
+      {"letra": "D", "texto": "R$ 2.000,00"}
+    ],
+    "resposta": "B"
+  },
+  {
+    "id": 2,
+    "tema": "Divisão proporcional",
+    "enunciado": "Três funcionários dividiram um prêmio de R$ 1.200,00 de maneira diretamente proporcional às horas extras trabalhadas. Carlos trabalhou 2 horas, Ana trabalhou 3 horas e Pedro trabalhou 5 horas. Quanto Carlos recebeu?",
+    "alternativas": [
+      {"letra": "A", "texto": "R$ 120,00"},
+      {"letra": "B", "texto": "R$ 240,00"},
+      {"letra": "C", "texto": "R$ 360,00"},
+      {"letra": "D", "texto": "R$ 600,00"}
+    ],
+    "resposta": "D"
+  },
+  {
+    "id": 3,
+    "tema": "Grandezas diretamente proporcionais",
+    "enunciado": "Um automóvel percorre 180 km utilizando 15 litros de combustível. Mantendo o mesmo consumo por quilômetro, quantos litros serão necessários para percorrer 300 km?",
+    "alternativas": [
+      {"letra": "A", "texto": "20 litros"},
+      {"letra": "B", "texto": "22 litros"},
+      {"letra": "C", "texto": "25 litros"},
+      {"letra": "D", "texto": "30 litros"}
+    ],
+    "resposta": "C"
+  },
+  {
+    "id": 4,
+    "tema": "Radicais",
+    "enunciado": "Simplificando a expressão (√72 + √50) ÷ √2, obtemos:",
+    "alternativas": [
+      {"letra": "A", "texto": "5"},
+      {"letra": "B", "texto": "7"},
+      {"letra": "C", "texto": "9"},
+      {"letra": "D", "texto": "11"}
+    ],
+    "resposta": "D"
+  },
+  {
+    "id": 5,
+    "tema": "Notação científica",
+    "enunciado": "A distância média entre a Terra e o Sol é de aproximadamente 150.000.000 km. Como esse número pode ser representado em notação científica?",
+    "alternativas": [
+      {"letra": "A", "texto": "1,5 × 10⁶ km"},
+      {"letra": "B", "texto": "15 × 10⁷ km"},
+      {"letra": "C", "texto": "1,5 × 10⁸ km"},
+      {"letra": "D", "texto": "1,5 × 10⁹ km"}
+    ],
+    "resposta": "C"
+  },
+  {
+    "id": 6,
+    "tema": "Produtos notáveis",
+    "enunciado": "Um terreno quadrado possui lado medindo (x + 4) metros. Qual expressão representa sua área na forma desenvolvida?",
+    "alternativas": [
+      {"letra": "A", "texto": "x² + 4x + 16"},
+      {"letra": "B", "texto": "x² + 16"},
+      {"letra": "C", "texto": "x² + 8x + 16"},
+      {"letra": "D", "texto": "x² + 8"}
+    ],
+    "resposta": "C"
+  },
+  {
+    "id": 7,
+    "tema": "Potenciação de expressões algébricas",
+    "enunciado": "Qual é o resultado da expressão (2x²y)³?",
+    "alternativas": [
+      {"letra": "A", "texto": "6x⁶y³"},
+      {"letra": "B", "texto": "8x⁵y³"},
+      {"letra": "C", "texto": "8x⁶y³"},
+      {"letra": "D", "texto": "8x⁶y"}
+    ],
+    "resposta": "C"
+  },
+  {
+    "id": 8,
+    "tema": "Fatoração",
+    "enunciado": "Analise as afirmações sobre fatoração:\n\nI. 25x² - 49 = (5x - 7)(5x + 7)\n\nII. x² + 10x + 25 = (x + 5)²\n\nAssinale a alternativa correta.",
+    "alternativas": [
+      {"letra": "A", "texto": "Apenas a afirmação I está correta."},
+      {"letra": "B", "texto": "As afirmações I e II estão corretas."},
+      {"letra": "C", "texto": "Apenas a afirmação II está correta."},
+      {"letra": "D", "texto": "Nenhuma das afirmações está correta."}
+    ],
+    "resposta": "B"
+  },
+  {
+    "id": 9,
+    "tema": "Função do 1º grau",
+    "enunciado": "Uma empresa de transporte cobra uma taxa fixa de R$ 8,00 mais R$ 3,00 por quilômetro percorrido. Se x representa a quantidade de quilômetros e y o preço total, qual função representa essa situação?",
+    "alternativas": [
+      {"letra": "A", "texto": "y = 8x + 3"},
+      {"letra": "B", "texto": "y = 3x"},
+      {"letra": "C", "texto": "y = 8x - 3"},
+      {"letra": "D", "texto": "y = 3x + 8"}
+    ],
+    "resposta": "D"
+  },
+  {
+    "id": 10,
+    "tema": "Domínio e imagem de uma função",
+    "enunciado": "Considere a função f(x) = 2x + 3, cujo domínio é o conjunto {0, 1, 2, 3}. Qual é o conjunto imagem dessa função?",
+    "alternativas": [
+      {"letra": "A", "texto": "{0, 2, 4, 6}"},
+      {"letra": "B", "texto": "{3, 5, 7, 9}"},
+      {"letra": "C", "texto": "{2, 3, 4, 5}"},
+      {"letra": "D", "texto": "{1, 3, 5, 7}"}
+    ],
+    "resposta": "B"
+  },
+  {
+    "id": 11,
+    "tema": "Adição e subtração de expressões algébricas",
+    "enunciado": "Simplifique a expressão: (5x² + 3x - 7) - (2x² - 4x + 5).",
+    "alternativas": [
+      {"letra": "A", "texto": "3x² - x - 2"},
+      {"letra": "B", "texto": "7x² - x - 12"},
+      {"letra": "C", "texto": "3x² - 7x + 12"},
+      {"letra": "D", "texto": "3x² + 7x - 12"}
+    ],
+    "resposta": "D"
+  },
+  {
+    "id": 12,
+    "tema": "Ângulos e retas paralelas",
+    "enunciado": "Analise as duas situações:\n\nI. Em uma circunferência, um arco mede 120°. Qual é a medida do ângulo central correspondente e do ângulo inscrito que intercepta esse mesmo arco?\n\nII. Duas retas paralelas são cortadas por uma transversal. Se um dos ângulos obtusos mede 125°, quanto mede um dos ângulos agudos formados?",
+    "alternativas": [
+      {"letra": "A", "texto": "I: 60° e 120°; II: 125°"},
+      {"letra": "B", "texto": "I: 120° e 60°; II: 55°"},
+      {"letra": "C", "texto": "I: 120° e 120°; II: 65°"},
+      {"letra": "D", "texto": "I: 60° e 60°; II: 55°"}
+    ],
+    "resposta": "B"
+  },
+  {
+    "id": 13,
+    "tema": "Semelhança de triângulos e Teorema de Tales",
+    "enunciado": "Em determinado horário, um poste de 2 metros de altura projeta uma sombra de 1,5 metro. No mesmo instante, uma árvore projeta uma sombra de 9 metros. Considerando que os raios solares formam ângulos iguais, qual é a altura da árvore?",
+    "alternativas": [
+      {"letra": "A", "texto": "9 metros"},
+      {"letra": "B", "texto": "10 metros"},
+      {"letra": "C", "texto": "12 metros"},
+      {"letra": "D", "texto": "15 metros"}
+    ],
+    "resposta": "C"
+  },
+  {
+    "id": 14,
+    "tema": "Relações métricas no triângulo retângulo",
+    "enunciado": "Em um triângulo retângulo, a hipotenusa mede 25 metros. A projeção de um dos catetos sobre a hipotenusa mede 9 metros. Qual é a medida desse cateto?",
+    "alternativas": [
+      {"letra": "A", "texto": "9 metros"},
+      {"letra": "B", "texto": "12 metros"},
+      {"letra": "C", "texto": "15 metros"},
+      {"letra": "D", "texto": "18 metros"}
+    ],
+    "resposta": "C"
+  },
+  {
+    "id": 15,
+    "tema": "Volume e vistas de sólidos geométricos",
+    "enunciado": "Um prisma reto de base quadrada possui lado da base medindo 4 cm e altura de 10 cm. Um cilindro possui raio da base de 2 cm e altura de 10 cm. Considere π = 3,14.\n\nQual alternativa apresenta corretamente os volumes do prisma e do cilindro, respectivamente, e suas vistas superiores?",
+    "alternativas": [
+      {"letra": "A", "texto": "160 cm³ e 125,6 cm³; quadrado e círculo."},
+      {"letra": "B", "texto": "80 cm³ e 62,8 cm³; retângulo e círculo."},
+      {"letra": "C", "texto": "160 cm³ e 62,8 cm³; círculo e quadrado."},
+      {"letra": "D", "texto": "40 cm³ e 125,6 cm³; quadrado e retângulo."}
+    ],
+    "resposta": "A"
+  },
+  {
+    "id": 16,
+    "tema": "Estatística e probabilidade",
+    "enunciado": "Uma pesquisa realizada com 40 estudantes perguntou qual era o esporte preferido de cada um. Os resultados foram:\n\nFutebol: 16 estudantes\nVôlei: 10 estudantes\nBasquete: 8 estudantes\nHandebol: 6 estudantes\n\nCom base nesses dados, qual é a porcentagem de estudantes que preferem futebol e qual é a probabilidade de escolher, ao acaso, um estudante que prefira vôlei ou basquete?",
+    "alternativas": [
+      {"letra": "A", "texto": "40% e 40%"},
+      {"letra": "B", "texto": "35% e 45%"},
+      {"letra": "C", "texto": "40% e 45%"},
+      {"letra": "D", "texto": "45% e 50%"}
+    ],
+    "resposta": "C"
+  }
+]
