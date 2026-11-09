@@ -6,7 +6,27 @@ let questaoAtual = 0;
 const app = document.getElementById("app");
 const botaoIniciar = document.getElementById("btn-iniciar");
 
-// Carrega as questões do arquivo JSON
+// Dicas específicas das 16 questões
+const dicas = [
+    "Aplique o primeiro desconto e depois calcule o segundo sobre o novo preço.",
+    "Some as horas dos três funcionários. Depois, descubra quanto corresponde a cada hora.",
+    "Observe que a quantidade de combustível aumenta na mesma proporção da distância.",
+    "Simplifique cada raiz antes de realizar a divisão.",
+    "Lembre-se: 1 milhão é 10⁶ e 1 bilhão é 10⁹.",
+    "Use a propriedade do quadrado da soma: (a + b)² = a² + 2ab + b².",
+    "Na potência de potência, multiplique os expoentes. Não esqueça de elevar o coeficiente.",
+    "Observe se cada expressão representa uma diferença de quadrados ou um trinômio quadrado perfeito.",
+    "Identifique a taxa fixa e o valor cobrado por quilômetro.",
+    "Substitua cada valor do domínio na função para encontrar a imagem.",
+    "Distribua o sinal de menos para todos os termos do segundo parêntese.",
+    "Lembre-se: o ângulo inscrito mede a metade do ângulo central que determina o mesmo arco.",
+    "Use a semelhança de triângulos e monte uma proporção entre as alturas e as sombras.",
+    "Utilize a relação métrica: cateto² = hipotenusa × projeção do cateto.",
+    "Para o prisma, calcule área da base × altura. Para o cilindro, use π × raio² × altura.",
+    "Transforme a quantidade de respostas em fração e depois em porcentagem."
+];
+
+// Carrega as questões
 async function carregarQuestoes() {
     try {
         const resposta = await fetch("questoes.json");
@@ -31,15 +51,16 @@ async function carregarQuestoes() {
     }
 }
 
-// Inicia a prova
+// Inicia o jogo
 function iniciarSimulado() {
     questaoAtual = 0;
     mostrarQuestao();
 }
 
-// Exibe a questão atual
+// Mostra a questão
 function mostrarQuestao() {
     const questao = questoes[questaoAtual];
+    const porcentagem = ((questaoAtual + 1) / questoes.length) * 100;
 
     let alternativasHTML = "";
 
@@ -64,8 +85,24 @@ function mostrarQuestao() {
 
     app.innerHTML = `
         <section class="questao">
+
             <div class="progresso">
-                Questão ${questaoAtual + 1} de ${questoes.length}
+                <span>FASE ${questaoAtual + 1} / ${questoes.length}</span>
+                <span>${Math.round(porcentagem)}% concluído</span>
+            </div>
+
+            <div style="
+                background:#34365d;
+                height:10px;
+                border-radius:10px;
+                margin-bottom:25px;
+                overflow:hidden;">
+                <div style="
+                    width:${porcentagem}%;
+                    height:100%;
+                    background:linear-gradient(90deg,#8b5cf6,#22d3ee);
+                    transition:width 0.4s;">
+                </div>
             </div>
 
             <h3>${questao.tema}</h3>
@@ -76,45 +113,67 @@ function mostrarQuestao() {
                 ${alternativasHTML}
             </div>
 
+            <div style="margin-top:22px;">
+                <button id="btn-dica" type="button">
+                    💡 Pedir uma dica
+                </button>
+
+                <div id="area-dica" style="
+                    display:none;
+                    background:#292348;
+                    border:1px solid #8b5cf6;
+                    border-radius:10px;
+                    padding:15px;
+                    margin-top:12px;
+                    color:#e9ddff;
+                    line-height:1.6;">
+                </div>
+            </div>
+
             <div class="navegacao">
                 <button id="anterior"
                     ${questaoAtual === 0 ? "disabled" : ""}>
-                    Anterior
+                    ← Anterior
                 </button>
 
                 ${
                     questaoAtual === questoes.length - 1
-                    ? `<button id="finalizar">Finalizar simulado</button>`
-                    : `<button id="proxima">Próxima</button>`
+                    ? `<button id="finalizar">Finalizar jogo 🏆</button>`
+                    : `<button id="proxima">Próxima →</button>`
                 }
             </div>
         </section>
     `;
 
-    // Registra a alternativa selecionada
+    // Salva a alternativa escolhida
     document.querySelectorAll('input[name="resposta"]').forEach(input => {
         input.addEventListener("change", function() {
             respostas[questaoAtual] = this.value;
         });
     });
 
-    // Voltar questão
-    const botaoAnterior = document.getElementById("anterior");
+    // Exibe a dica
+    document.getElementById("btn-dica").addEventListener("click", () => {
+        const areaDica = document.getElementById("area-dica");
+        areaDica.textContent = "💡 Dica: " + dicas[questaoAtual];
+        areaDica.style.display = "block";
+    });
 
-    botaoAnterior.addEventListener("click", () => {
+    // Voltar
+    document.getElementById("anterior").addEventListener("click", () => {
         if (questaoAtual > 0) {
             questaoAtual--;
             mostrarQuestao();
         }
     });
 
-    // Avançar questão
+    // Avançar
     const botaoProxima = document.getElementById("proxima");
 
     if (botaoProxima) {
         botaoProxima.addEventListener("click", () => {
             if (respostas[questaoAtual] === null) {
-                alert("Selecione uma alternativa antes de continuar.");
+                alert("Escolha uma alternativa antes de avançar!");
                 return;
             }
 
@@ -123,7 +182,7 @@ function mostrarQuestao() {
         });
     }
 
-    // Finalizar prova
+    // Finalizar
     const botaoFinalizar = document.getElementById("finalizar");
 
     if (botaoFinalizar) {
@@ -131,23 +190,23 @@ function mostrarQuestao() {
     }
 }
 
-// Calcula e apresenta o resultado
+// Finaliza o simulado
 function finalizarSimulado() {
     if (respostas[questaoAtual] === null) {
-        alert("Selecione uma alternativa antes de finalizar.");
+        alert("Escolha uma alternativa antes de finalizar!");
         return;
     }
 
     const semResposta = respostas.filter(r => r === null).length;
 
     if (semResposta > 0) {
-        alert(`Você ainda tem ${semResposta} questão(ões) sem resposta.`);
+        alert(`Ainda existem ${semResposta} questão(ões) sem resposta.`);
         return;
     }
 
-    const confirmar = confirm("Deseja realmente finalizar o simulado?");
-
-    if (!confirmar) return;
+    if (!confirm("Tem certeza de que deseja finalizar o desafio?")) {
+        return;
+    }
 
     let acertos = 0;
 
@@ -163,8 +222,20 @@ function finalizarSimulado() {
     mostrarResultado(acertos, erros, nota);
 }
 
-// Exibe a tela final e o gabarito
+// Tela de resultado e conquistas
 function mostrarResultado(acertos, erros, nota) {
+    let conquista = "";
+
+    if (acertos === questoes.length) {
+        conquista = "🏆 LENDA DA MATEMÁTICA! Desempenho perfeito!";
+    } else if (nota >= 7) {
+        conquista = "🥇 MESTRE DOS CÁLCULOS! Excelente trabalho!";
+    } else if (nota >= 5) {
+        conquista = "🥈 APRENDIZ AVANÇADO! Continue evoluindo!";
+    } else {
+        conquista = "🎮 JORNADA INICIADA! Treine e tente novamente!";
+    }
+
     let revisaoHTML = "";
 
     questoes.forEach((questao, indice) => {
@@ -174,7 +245,7 @@ function mostrarResultado(acertos, erros, nota) {
             <div class="revisao">
                 <h4>
                     Questão ${indice + 1} —
-                    ${acertou ? "Acertou" : "Errou"}
+                    ${acertou ? "✅ Acertou" : "❌ Errou"}
                 </h4>
 
                 <p>Sua resposta: ${respostas[indice]}</p>
@@ -185,20 +256,22 @@ function mostrarResultado(acertos, erros, nota) {
 
     app.innerHTML = `
         <section class="resultado">
-            <h2>Simulado finalizado!</h2>
+            <h2>🏁 DESAFIO CONCLUÍDO!</h2>
 
             <div class="pontuacao">
                 <h3>Nota: ${nota.toFixed(1).replace(".", ",")}</h3>
-                <p>Acertos: ${acertos}</p>
-                <p>Erros: ${erros}</p>
-                <p>Total de questões: ${questoes.length}</p>
+                <p>⭐ Acertos: ${acertos}</p>
+                <p>❌ Erros: ${erros}</p>
+                <p>🎯 Total de questões: ${questoes.length}</p>
             </div>
 
-            <h3>Gabarito e revisão</h3>
+            <h3>${conquista}</h3>
+
+            <h3 style="margin-top:30px;">📋 Gabarito e revisão</h3>
 
             ${revisaoHTML}
 
-            <button id="reiniciar">Refazer simulado</button>
+            <button id="reiniciar">🔄 Jogar novamente</button>
         </section>
     `;
 
@@ -209,5 +282,6 @@ function mostrarResultado(acertos, erros, nota) {
     });
 }
 
-// Inicia o carregamento
+// Carrega o jogo
 carregarQuestoes();
+
