@@ -17,9 +17,9 @@
     "enunciado": "Três funcionários dividiram um prêmio de R$ 1.200,00 de maneira diretamente proporcional às horas extras trabalhadas. Carlos trabalhou 2 horas, Ana trabalhou 3 horas e Pedro trabalhou 5 horas. Quanto Carlos recebeu?",
     "alternativas": [
       {"letra": "A", "texto": "R$ 120,00"},
-      {"letra": "B", "texto": "R$ 240,00"},
-      {"letra": "C", "texto": "R$ 360,00"},
-      {"letra": "D", "texto": "R$ 600,00"}
+      {"letra": "B", "texto": "R$ 360,00"},
+      {"letra": "C", "texto": "R$ 480,00"},
+      {"letra": "D", "texto": "R$ 240,00"}
     ],
     "resposta": "D"
   },
