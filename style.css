@@ -73,3 +73,118 @@ footer {
     color: #64748b;
     font-size: 14px;
 }
+/* Área das questões */
+.questao,
+.resultado {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.progresso {
+    color: #0f766e;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.questao h3 {
+    color: #172554;
+    margin-bottom: 20px;
+}
+
+.enunciado {
+    font-size: 17px;
+    line-height: 1.7;
+    white-space: pre-line;
+    margin-bottom: 25px;
+}
+
+/* Alternativas */
+.alternativa {
+    display: block;
+    background: #f1f5f9;
+    padding: 16px;
+    margin: 12px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    line-height: 1.5;
+    transition: 0.2s;
+}
+
+.alternativa:hover {
+    background: #dbeafe;
+}
+
+.alternativa input {
+    margin-right: 10px;
+}
+
+/* Navegação */
+.navegacao {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+button:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Resultado */
+.resultado h2 {
+    color: #172554;
+    margin-bottom: 20px;
+}
+
+.pontuacao {
+    background: #ecfdf5;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.pontuacao h3 {
+    color: #0f766e;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.revisao {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 15px 0;
+    line-height: 1.7;
+}
+
+.revisao h4 {
+    color: #172554;
+    margin-bottom: 8px;
+}
+
+#reiniciar {
+    margin-top: 25px;
+}
+
+@media (max-width: 600px) {
+    main {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .questao,
+    .resultado {
+        padding: 20px;
+    }
+
+    .navegacao {
+        flex-direction: column;
+    }
+
+    .navegacao button {
+        width: 100%;
+    }
+}
